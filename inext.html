@@ -1,0 +1,4283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="My Career - Career, Business and Professional Networking Platform">
+<title>My Career | Connect • Discover • Grow</title>
+
+<style>
+/* =========================================================
+   MY CAREER 2.0
+   Founder: Siddhi Bhintade
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter,Segoe UI,Arial,sans-serif;
+}
+
+:root{
+    --primary:#2563eb;
+    --primary2:#4f46e5;
+    --purple:#7c3aed;
+    --dark:#0f172a;
+    --text:#172033;
+    --muted:#64748b;
+    --bg:#f5f7fb;
+    --card:#ffffff;
+    --border:#e2e8f0;
+    --success:#16a34a;
+    --danger:#dc2626;
+    --warning:#f59e0b;
+    --shadow:0 10px 35px rgba(15,23,42,.08);
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    transition:.25s;
+}
+
+body.dark{
+    --bg:#08111f;
+    --card:#111c2e;
+    --text:#f8fafc;
+    --muted:#94a3b8;
+    --border:#24344d;
+    --shadow:0 12px 35px rgba(0,0,0,.3);
+}
+
+button,input,textarea,select{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+.hidden{
+    display:none!important;
+}
+
+/* =========================================================
+   LANDING PAGE
+========================================================= */
+
+#landing{
+    min-height:100vh;
+}
+
+.landingNav{
+    height:72px;
+    padding:0 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.dark .landingNav{
+    background:rgba(17,28,46,.94);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:22px;
+    font-weight:900;
+    color:var(--primary);
+}
+
+.brandMark{
+    width:40px;
+    height:40px;
+    border-radius:12px;
+    background:linear-gradient(135deg,var(--primary),var(--purple));
+    color:white;
+    display:grid;
+    place-items:center;
+    font-size:13px;
+}
+
+.navLinks{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+.navLinks a{
+    text-decoration:none;
+    color:var(--text);
+    font-weight:600;
+    font-size:14px;
+}
+
+.navLinks a:hover{
+    color:var(--primary);
+}
+
+.navBtns{
+    display:flex;
+    gap:10px;
+}
+
+.btn{
+    border:0;
+    padding:11px 18px;
+    border-radius:9px;
+    font-weight:700;
+    transition:.2s;
+}
+
+.btnPrimary{
+    background:linear-gradient(135deg,var(--primary),var(--primary2));
+    color:white;
+}
+
+.btnPrimary:hover{
+    transform:translateY(-1px);
+    box-shadow:0 8px 20px rgba(37,99,235,.25);
+}
+
+.btnOutline{
+    background:transparent;
+    border:1px solid var(--border);
+    color:var(--text);
+}
+
+.btnLight{
+    background:white;
+    color:var(--primary);
+}
+
+.heroSection{
+    min-height:650px;
+    padding:90px 6%;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:60px;
+    align-items:center;
+    background:
+        radial-gradient(circle at 85% 20%,rgba(124,58,237,.15),transparent 28%),
+        radial-gradient(circle at 10% 80%,rgba(37,99,235,.12),transparent 30%);
+}
+
+.heroBadge{
+    display:inline-flex;
+    padding:8px 13px;
+    border-radius:30px;
+    background:#eff6ff;
+    color:var(--primary);
+    font-weight:700;
+    font-size:13px;
+    margin-bottom:18px;
+}
+
+.dark .heroBadge{
+    background:#172554;
+}
+
+.heroSection h1{
+    font-size:clamp(42px,5vw,70px);
+    line-height:1.03;
+    letter-spacing:-2px;
+    margin-bottom:20px;
+}
+
+.gradientText{
+    background:linear-gradient(90deg,var(--primary),var(--purple));
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.heroSection p{
+    color:var(--muted);
+    font-size:18px;
+    line-height:1.7;
+    max-width:620px;
+}
+
+.heroBtns{
+    display:flex;
+    gap:12px;
+    margin-top:28px;
+}
+
+.heroVisual{
+    position:relative;
+}
+
+.dashboardMock{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:22px;
+    box-shadow:0 30px 70px rgba(37,99,235,.16);
+    padding:18px;
+    transform:rotate(1deg);
+}
+
+.mockTop{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:15px;
+}
+
+.mockBody{
+    display:grid;
+    grid-template-columns:55px 1fr;
+    gap:12px;
+}
+
+.mockSide div{
+    height:35px;
+    background:var(--bg);
+    border-radius:8px;
+    margin-bottom:8px;
+}
+
+.mockContent{
+    display:grid;
+    gap:12px;
+}
+
+.mockCard{
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:15px;
+}
+
+.mockLine{
+    height:9px;
+    background:var(--bg);
+    border-radius:10px;
+    margin:7px 0;
+}
+
+.mockLine.short{
+    width:55%;
+}
+
+.floatingAI{
+    position:absolute;
+    right:-25px;
+    bottom:20px;
+    width:220px;
+    padding:17px;
+    background:linear-gradient(135deg,var(--primary),var(--purple));
+    color:white;
+    border-radius:17px;
+    box-shadow:0 20px 40px rgba(37,99,235,.3);
+}
+
+.section{
+    padding:80px 6%;
+}
+
+.sectionTitle{
+    text-align:center;
+    max-width:700px;
+    margin:auto auto 45px;
+}
+
+.sectionTitle h2{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.sectionTitle p{
+    color:var(--muted);
+    line-height:1.7;
+}
+
+.featureGrid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.featureCard{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:28px;
+    border-radius:17px;
+    box-shadow:var(--shadow);
+}
+
+.featureIcon{
+    width:50px;
+    height:50px;
+    border-radius:13px;
+    background:#eff6ff;
+    display:grid;
+    place-items:center;
+    font-size:23px;
+    margin-bottom:18px;
+}
+
+.dark .featureIcon{
+    background:#172554;
+}
+
+.featureCard h3{
+    margin-bottom:9px;
+}
+
+.featureCard p{
+    color:var(--muted);
+    line-height:1.6;
+    font-size:14px;
+}
+
+.roles{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.roleCard{
+    padding:30px;
+    border-radius:20px;
+    color:white;
+    min-height:220px;
+}
+
+.roleCard.student{
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+}
+
+.roleCard.recruiter{
+    background:linear-gradient(135deg,#059669,#0f766e);
+}
+
+.roleCard.business{
+    background:linear-gradient(135deg,#7c3aed,#9333ea);
+}
+
+.roleCard h3{
+    font-size:24px;
+    margin-bottom:12px;
+}
+
+.roleCard p{
+    opacity:.88;
+    line-height:1.6;
+}
+
+.footer{
+    padding:40px 6%;
+    background:var(--dark);
+    color:#cbd5e1;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:30px;
+}
+
+.footer h3{
+    color:white;
+    margin-bottom:15px;
+}
+
+.footer p,.footer li{
+    font-size:14px;
+    line-height:1.8;
+    color:#94a3b8;
+}
+
+.footer ul{
+    list-style:none;
+}
+
+.footerBottom{
+    grid-column:1/-1;
+    border-top:1px solid #263449;
+    padding-top:20px;
+    text-align:center;
+}
+
+/* =========================================================
+   AUTH
+========================================================= */
+
+.authOverlay{
+    position:fixed;
+    inset:0;
+    background:rgba(2,6,23,.72);
+    backdrop-filter:blur(5px);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:5000;
+}
+
+.authOverlay.open{
+    display:flex;
+}
+
+.authBox{
+    width:420px;
+    max-width:92%;
+    background:var(--card);
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 30px 80px rgba(0,0,0,.3);
+}
+
+.authHeader{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.authHeader h2{
+    margin-bottom:7px;
+}
+
+.authHeader p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+.formGroup{
+    margin-bottom:15px;
+}
+
+.formGroup label{
+    display:block;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:7px;
+}
+
+.formGroup input,
+.formGroup textarea,
+.formGroup select{
+    width:100%;
+    padding:12px;
+    border:1px solid var(--border);
+    border-radius:9px;
+    outline:none;
+    background:var(--bg);
+    color:var(--text);
+}
+
+.authSwitch{
+    text-align:center;
+    margin-top:15px;
+    color:var(--muted);
+    font-size:13px;
+}
+
+.authSwitch span{
+    color:var(--primary);
+    font-weight:700;
+    cursor:pointer;
+}
+
+/* =========================================================
+   APP
+========================================================= */
+
+#app{
+    display:none;
+}
+
+.appNav{
+    height:70px;
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    background:var(--card);
+    border-bottom:1px solid var(--border);
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 25px;
+}
+
+.appSearch{
+    width:320px;
+    position:relative;
+}
+
+.appSearch input{
+    width:100%;
+    padding:11px 14px 11px 40px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    background:var(--bg);
+    color:var(--text);
+    outline:none;
+}
+
+.appSearch span{
+    position:absolute;
+    left:14px;
+    top:10px;
+}
+
+.appActions{
+    display:flex;
+    gap:9px;
+    align-items:center;
+}
+
+.iconBtn{
+    width:40px;
+    height:40px;
+    border:0;
+    border-radius:50%;
+    background:var(--bg);
+    color:var(--text);
+}
+
+.miniUser{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-left:8px;
+}
+
+.avatar{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#2563eb,#9333ea);
+    color:white;
+    display:grid;
+    place-items:center;
+    font-weight:800;
+}
+
+.appLayout{
+    display:flex;
+    padding-top:70px;
+}
+
+.sidebar{
+    position:fixed;
+    top:70px;
+    bottom:0;
+    width:245px;
+    background:var(--card);
+    border-right:1px solid var(--border);
+    padding:20px 14px;
+    overflow:auto;
+}
+
+.menuLabel{
+    color:var(--muted);
+    font-size:10px;
+    letter-spacing:1.2px;
+    font-weight:800;
+    margin:15px 12px 8px;
+    text-transform:uppercase;
+}
+
+.menuItem{
+    padding:12px 13px;
+    border-radius:9px;
+    margin:3px 0;
+    display:flex;
+    gap:12px;
+    align-items:center;
+    color:var(--muted);
+    cursor:pointer;
+    font-weight:650;
+    font-size:14px;
+}
+
+.menuItem:hover,
+.menuItem.active{
+    background:#eff6ff;
+    color:var(--primary);
+}
+
+.dark .menuItem:hover,
+.dark .menuItem.active{
+    background:#172554;
+}
+
+.main{
+    margin-left:245px;
+    width:calc(100% - 245px);
+    padding:25px;
+    min-height:calc(100vh - 70px);
+}
+
+.page{
+    display:none;
+}
+
+.page.active{
+    display:block;
+}
+
+.pageHeader{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:22px;
+}
+
+.pageHeader h1{
+    font-size:27px;
+}
+
+.pageHeader p{
+    color:var(--muted);
+    margin-top:5px;
+}
+
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:15px;
+    box-shadow:var(--shadow);
+}
+
+.cardPad{
+    padding:20px;
+}
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.welcome{
+    padding:30px;
+    color:white;
+    border-radius:18px;
+    background:linear-gradient(120deg,#1d4ed8,#4f46e5,#7c3aed);
+    margin-bottom:20px;
+}
+
+.welcome h1{
+    font-size:31px;
+    margin-bottom:7px;
+}
+
+.welcome p{
+    opacity:.9;
+}
+
+.quickGrid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.quickStat{
+    padding:20px;
+}
+
+.quickStat span{
+    color:var(--muted);
+    font-size:13px;
+}
+
+.quickStat h2{
+    font-size:27px;
+    margin:7px 0;
+}
+
+.green{
+    color:var(--success);
+}
+
+.dashboardGrid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:20px;
+}
+
+.post{
+    padding:20px;
+    margin-bottom:15px;
+}
+
+.profileRow{
+    display:flex;
+    gap:11px;
+    align-items:center;
+}
+
+.profileName{
+    font-weight:750;
+}
+
+.profileRole{
+    color:var(--muted);
+    font-size:12px;
+    margin-top:2px;
+}
+
+.postText{
+    margin:16px 0;
+    line-height:1.65;
+}
+
+.postActions{
+    display:flex;
+    gap:25px;
+    color:var(--muted);
+    border-top:1px solid var(--border);
+    padding-top:14px;
+}
+
+.postActions span{
+    cursor:pointer;
+}
+
+.postActions span:hover{
+    color:var(--primary);
+}
+
+.aiPanel{
+    padding:20px;
+    border-radius:16px;
+    background:linear-gradient(145deg,#eff6ff,#f5f3ff);
+    border:1px solid #dbeafe;
+}
+
+.dark .aiPanel{
+    background:#172554;
+}
+
+.aiHead{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.aiIcon{
+    width:45px;
+    height:45px;
+    border-radius:13px;
+    display:grid;
+    place-items:center;
+    color:white;
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+}
+
+.aiChoices{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin:16px 0;
+}
+
+.aiChoice{
+    padding:11px;
+    border:1px solid var(--border);
+    border-radius:9px;
+    background:var(--card);
+    color:var(--text);
+    text-align:left;
+    font-size:12px;
+}
+
+/* =========================================================
+   JOBS
+========================================================= */
+
+.filterBar{
+    display:flex;
+    gap:10px;
+    margin-bottom:18px;
+    flex-wrap:wrap;
+}
+
+.filterBar input,
+.filterBar select{
+    padding:11px;
+    border:1px solid var(--border);
+    border-radius:9px;
+    background:var(--card);
+    color:var(--text);
+    outline:none;
+}
+
+.jobGrid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+}
+
+.jobCard{
+    padding:20px;
+}
+
+.jobTop{
+    display:flex;
+    gap:13px;
+}
+
+.companyLogo{
+    width:50px;
+    height:50px;
+    border-radius:12px;
+    display:grid;
+    place-items:center;
+    background:#dbeafe;
+    color:var(--primary);
+    font-weight:900;
+    font-size:18px;
+    flex-shrink:0;
+}
+
+.jobCompany{
+    color:var(--muted);
+    font-size:13px;
+    margin-top:4px;
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin:15px 0;
+}
+
+.tag{
+    background:var(--bg);
+    color:var(--muted);
+    padding:5px 8px;
+    border-radius:6px;
+    font-size:11px;
+}
+
+.jobBottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-top:1px solid var(--border);
+    padding-top:14px;
+}
+
+.salary{
+    color:var(--success);
+    font-weight:750;
+    font-size:13px;
+}
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.cover{
+    height:180px;
+    background:linear-gradient(120deg,#2563eb,#7c3aed);
+    border-radius:17px 17px 0 0;
+}
+
+.profileBody{
+    padding:0 25px 25px;
+}
+
+.largeAvatar{
+    width:105px;
+    height:105px;
+    margin-top:-52px;
+    border:5px solid var(--card);
+    border-radius:50%;
+    background:linear-gradient(135deg,#2563eb,#9333ea);
+    color:white;
+    display:grid;
+    place-items:center;
+    font-size:30px;
+    font-weight:900;
+}
+
+.profileBody h1{
+    margin-top:12px;
+}
+
+.muted{
+    color:var(--muted);
+}
+
+.stats{
+    display:flex;
+    gap:35px;
+    margin:20px 0;
+}
+
+.stat strong{
+    display:block;
+    font-size:20px;
+}
+
+.stat span{
+    color:var(--muted);
+    font-size:12px;
+}
+
+/* =========================================================
+   NETWORK / COMPANY
+========================================================= */
+
+.peopleGrid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.person{
+    padding:25px;
+    text-align:center;
+}
+
+.person .avatar{
+    width:70px;
+    height:70px;
+    margin:auto;
+    font-size:22px;
+}
+
+.person h3{
+    margin:12px 0 5px;
+}
+
+.person p{
+    color:var(--muted);
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+/* =========================================================
+   APPLICATIONS
+========================================================= */
+
+.status{
+    display:inline-block;
+    padding:5px 9px;
+    border-radius:7px;
+    font-size:11px;
+    font-weight:750;
+}
+
+.status.applied{
+    background:#dbeafe;
+    color:#1d4ed8;
+}
+
+.status.interview{
+    background:#fef3c7;
+    color:#92400e;
+}
+
+.status.selected{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.status.rejected{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.application{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:17px;
+    border-bottom:1px solid var(--border);
+}
+
+.application:last-child{
+    border-bottom:0;
+}
+
+/* =========================================================
+   ROADMAP
+========================================================= */
+
+.roadmap{
+    position:relative;
+    padding-left:35px;
+}
+
+.roadmap:before{
+    content:"";
+    position:absolute;
+    left:9px;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:#dbeafe;
+}
+
+.step{
+    position:relative;
+    padding:0 0 30px;
+}
+
+.stepDot{
+    position:absolute;
+    left:-33px;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:var(--primary);
+    border:4px solid var(--card);
+    box-shadow:0 0 0 2px var(--primary);
+}
+
+.step h3{
+    margin-bottom:5px;
+}
+
+.step p{
+    color:var(--muted);
+    line-height:1.6;
+}
+
+/* =========================================================
+   RECRUITER
+========================================================= */
+
+.recruiterStats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.chart{
+    height:220px;
+    display:flex;
+    align-items:end;
+    gap:14px;
+    padding:20px;
+}
+
+.bar{
+    flex:1;
+    background:linear-gradient(to top,#2563eb,#7c3aed);
+    border-radius:8px 8px 0 0;
+}
+
+/* =========================================================
+   ADMIN
+========================================================= */
+
+.adminGrid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.adminStat{
+    padding:20px;
+}
+
+.adminStat small{
+    color:var(--muted);
+}
+
+.tableWrap{
+    overflow:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    text-align:left;
+    padding:14px;
+    border-bottom:1px solid var(--border);
+    white-space:nowrap;
+}
+
+th{
+    color:var(--muted);
+    font-size:12px;
+}
+
+/* =========================================================
+   AI CHAT
+========================================================= */
+
+.aiFloating{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:62px;
+    height:62px;
+    border:0;
+    border-radius:50%;
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:white;
+    font-size:25px;
+    box-shadow:0 15px 40px rgba(37,99,235,.35);
+    z-index:3000;
+}
+
+.aiChat{
+    position:fixed;
+    right:25px;
+    bottom:100px;
+    width:370px;
+    height:540px;
+    display:none;
+    flex-direction:column;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    box-shadow:0 25px 70px rgba(0,0,0,.25);
+    overflow:hidden;
+    z-index:3000;
+}
+
+.aiChat.open{
+    display:flex;
+}
+
+.aiChatHead{
+    padding:17px;
+    color:white;
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    display:flex;
+    justify-content:space-between;
+}
+
+.chatMessages{
+    flex:1;
+    overflow:auto;
+    padding:15px;
+}
+
+.message{
+    max-width:85%;
+    padding:10px 12px;
+    border-radius:12px;
+    margin-bottom:10px;
+    font-size:13px;
+    line-height:1.5;
+}
+
+.bot{
+    background:var(--bg);
+}
+
+.user{
+    margin-left:auto;
+    background:var(--primary);
+    color:white;
+}
+
+.chatInput{
+    display:flex;
+    padding:10px;
+    gap:7px;
+    border-top:1px solid var(--border);
+}
+
+.chatInput input{
+    flex:1;
+    padding:11px;
+    border:1px solid var(--border);
+    border-radius:9px;
+    background:var(--bg);
+    color:var(--text);
+    outline:none;
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    background:rgba(2,6,23,.65);
+    z-index:6000;
+}
+
+.modal.open{
+    display:flex;
+}
+
+.modalBox{
+    width:520px;
+    max-width:92%;
+    max-height:90vh;
+    overflow:auto;
+    background:var(--card);
+    border-radius:18px;
+    padding:25px;
+}
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast{
+    position:fixed;
+    right:25px;
+    top:90px;
+    background:var(--dark);
+    color:white;
+    padding:13px 18px;
+    border-radius:9px;
+    transform:translateX(150%);
+    transition:.3s;
+    z-index:8000;
+    box-shadow:var(--shadow);
+}
+
+.toast.show{
+    transform:translateX(0);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1050px){
+
+    .heroSection{
+        grid-template-columns:1fr;
+    }
+
+    .featureGrid,
+    .roles{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .quickGrid,
+    .adminGrid,
+    .recruiterStats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .dashboardGrid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:800px){
+
+    .navLinks{
+        display:none;
+    }
+
+    .featureGrid,
+    .roles,
+    .jobGrid,
+    .peopleGrid{
+        grid-template-columns:1fr;
+    }
+
+    .sidebar{
+        width:70px;
+    }
+
+    .sidebar .menuItem span{
+        display:none;
+    }
+
+    .menuLabel{
+        display:none;
+    }
+
+    .main{
+        margin-left:70px;
+        width:calc(100% - 70px);
+        padding:15px;
+    }
+
+    .appSearch{
+        display:none;
+    }
+
+    .footer{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:550px){
+
+    .landingNav{
+        padding:0 15px;
+    }
+
+    .heroSection{
+        padding:60px 20px;
+    }
+
+    .section{
+        padding:60px 20px;
+    }
+
+    .heroSection h1{
+        font-size:43px;
+    }
+
+    .quickGrid,
+    .adminGrid,
+    .recruiterStats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .aiChat{
+        right:10px;
+        bottom:85px;
+        width:calc(100% - 20px);
+    }
+
+    .footer{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     LANDING PAGE
+========================================================= -->
+
+<div id="landing">
+
+<nav class="landingNav">
+
+    <div class="brand">
+        <div class="brandMark">MC</div>
+        MY CAREER
+    </div>
+
+    <div class="navLinks">
+        <a href="#features">Features</a>
+        <a href="#roles">For Students</a>
+        <a href="#roles">For Recruiters</a>
+        <a href="#about">About</a>
+    </div>
+
+    <div class="navBtns">
+        <button class="btn btnOutline" onclick="openAuth('login')">
+            Login
+        </button>
+
+        <button class="btn btnPrimary" onclick="openAuth('register')">
+            Get Started
+        </button>
+    </div>
+
+</nav>
+
+
+<section class="heroSection">
+
+    <div>
+
+        <div class="heroBadge">
+            🚀 The Future of Career Networking
+        </div>
+
+        <h1>
+            Build Your
+            <span class="gradientText">Career.</span>
+            <br>
+            Build Your
+            <span class="gradientText">Future.</span>
+        </h1>
+
+        <p>
+            My Career is a professional ecosystem that connects
+            students, professionals, recruiters and businesses.
+            Discover opportunities, build your profile, grow your
+            network and get personalized career guidance.
+        </p>
+
+        <div class="heroBtns">
+
+            <button class="btn btnPrimary"
+                    onclick="openAuth('register')">
+                Create Free Profile →
+            </button>
+
+            <button class="btn btnOutline"
+                    onclick="scrollToSection('features')">
+                Explore Platform
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="heroVisual">
+
+        <div class="dashboardMock">
+
+            <div class="mockTop">
+                <b>My Career Dashboard</b>
+                <span>•••</span>
+            </div>
+
+            <div class="mockBody">
+
+                <div class="mockSide">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+                <div class="mockContent">
+
+                    <div class="mockCard">
+                        <b>Welcome back, Siddhi 👋</b>
+                        <div class="mockLine"></div>
+                        <div class="mockLine short"></div>
+                    </div>
+
+                    <div class="mockCard">
+                        <b>Recommended Jobs</b>
+                        <div class="mockLine"></div>
+                        <div class="mockLine"></div>
+                        <div class="mockLine short"></div>
+                    </div>
+
+                    <div class="mockCard">
+                        <b>AI Career Guide 🤖</b>
+                        <div class="mockLine"></div>
+                        <div class="mockLine short"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="floatingAI">
+
+            🤖 <b>AI Career Guide</b>
+
+            <p style="font-size:12px;margin-top:6px;opacity:.85">
+                Personalized career guidance, skills,
+                resume and interview support.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section" id="features">
+
+    <div class="sectionTitle">
+
+        <h2>Everything You Need to Grow</h2>
+
+        <p>
+            One platform for your professional identity,
+            opportunities, networking and career development.
+        </p>
+
+    </div>
+
+
+    <div class="featureGrid">
+
+        <div class="featureCard">
+            <div class="featureIcon">💼</div>
+            <h3>Job Discovery</h3>
+            <p>
+                Discover internships, full-time jobs and
+                opportunities based on your interests and skills.
+            </p>
+        </div>
+
+        <div class="featureCard">
+            <div class="featureIcon">🤝</div>
+            <h3>Professional Network</h3>
+            <p>
+                Connect with students, professionals,
+                recruiters, founders and industry experts.
+            </p>
+        </div>
+
+        <div class="featureCard">
+            <div class="featureIcon">🤖</div>
+            <h3>AI Career Guide</h3>
+            <p>
+                Get guidance for career paths, resumes,
+                skills, interviews and professional growth.
+            </p>
+        </div>
+
+        <div class="featureCard">
+            <div class="featureIcon">📄</div>
+            <h3>Resume Builder</h3>
+            <p>
+                Create a professional profile and prepare
+                an ATS-friendly resume.
+            </p>
+        </div>
+
+        <div class="featureCard">
+            <div class="featureIcon">🗺️</div>
+            <h3>Career Roadmap</h3>
+            <p>
+                Understand what to learn next and build
+                a structured career development journey.
+            </p>
+        </div>
+
+        <div class="featureCard">
+            <div class="featureIcon">📊</div>
+            <h3>Career Analytics</h3>
+            <p>
+                Track profile growth, applications,
+                networking activity and career progress.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section" id="roles">
+
+    <div class="sectionTitle">
+
+        <h2>Built for Every Career Journey</h2>
+
+        <p>
+            Different users. One professional ecosystem.
+        </p>
+
+    </div>
+
+
+    <div class="roles">
+
+        <div class="roleCard student">
+
+            <h3>🎓 Students</h3>
+
+            <p>
+                Build your professional profile, discover
+                internships, learn skills, prepare for interviews
+                and connect with industry professionals.
+            </p>
+
+            <br>
+
+            <button class="btn btnLight"
+                    onclick="openAuth('register')">
+                Join as Student
+            </button>
+
+        </div>
+
+
+        <div class="roleCard recruiter">
+
+            <h3>👔 Recruiters</h3>
+
+            <p>
+                Publish opportunities, discover candidates,
+                manage applications and build your talent pipeline.
+            </p>
+
+            <br>
+
+            <button class="btn btnLight"
+                    onclick="openAuth('register')">
+                Join as Recruiter
+            </button>
+
+        </div>
+
+
+        <div class="roleCard business">
+
+            <h3>🏢 Businesses</h3>
+
+            <p>
+                Create your company presence, share updates,
+                connect with talent and grow your professional network.
+            </p>
+
+            <br>
+
+            <button class="btn btnLight"
+                    onclick="openAuth('register')">
+                Create Company
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section" id="about">
+
+    <div class="sectionTitle">
+
+        <h2>Why My Career?</h2>
+
+        <p>
+            Students often use separate platforms for jobs,
+            networking, resumes, learning and interview preparation.
+            My Career brings these activities into one ecosystem.
+        </p>
+
+    </div>
+
+    <div class="card cardPad"
+         style="max-width:900px;margin:auto;text-align:center">
+
+        <h2>Connect • Discover • Grow</h2>
+
+        <p class="muted"
+           style="line-height:1.8;margin-top:15px">
+
+            My Career is a project focused on creating a unified
+            digital career environment where people can create
+            their professional identity, discover opportunities,
+            build meaningful connections and receive intelligent
+            career guidance.
+
+        </p>
+
+        <p style="margin-top:20px;font-weight:700;color:var(--primary)">
+            Founded by Siddhi Bhintade
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer class="footer">
+
+    <div>
+
+        <h3>MY CAREER</h3>
+
+        <p>
+            A career and professional networking ecosystem
+            designed to connect people with opportunities.
+        </p>
+
+    </div>
+
+    <div>
+
+        <h3>Platform</h3>
+
+        <ul>
+            <li>Jobs</li>
+            <li>Networking</li>
+            <li>Companies</li>
+            <li>AI Career Guide</li>
+        </ul>
+
+    </div>
+
+    <div>
+
+        <h3>Career</h3>
+
+        <ul>
+            <li>Resume Builder</li>
+            <li>Interview Prep</li>
+            <li>Career Roadmap</li>
+            <li>Skill Development</li>
+        </ul>
+
+    </div>
+
+    <div>
+
+        <h3>Project</h3>
+
+        <ul>
+            <li>About</li>
+            <li>Founder</li>
+            <li>GitHub Project</li>
+            <li>Documentation</li>
+        </ul>
+
+    </div>
+
+    <div class="footerBottom">
+
+        © 2026 My Career • Founded by Siddhi Bhintade
+
+    </div>
+
+</footer>
+
+</div>
+
+
+<!-- =========================================================
+     APPLICATION
+========================================================= -->
+
+<div id="app">
+
+<nav class="appNav">
+
+    <div class="brand">
+        <div class="brandMark">MC</div>
+        MY CAREER
+    </div>
+
+    <div class="appSearch">
+
+        <span>🔍</span>
+
+        <input id="appSearch"
+               placeholder="Search jobs, people, companies..."
+               oninput="searchApp()">
+
+    </div>
+
+    <div class="appActions">
+
+        <button class="iconBtn" onclick="toggleDark()">🌙</button>
+
+        <button class="iconBtn"
+                onclick="showPage('notifications',this)">
+            🔔
+        </button>
+
+        <button class="iconBtn"
+                onclick="openAI()">
+            🤖
+        </button>
+
+        <div class="miniUser">
+
+            <div class="avatar">SB</div>
+
+            <b>Siddhi</b>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<div class="appLayout">
+
+<aside class="sidebar">
+
+    <div class="menuLabel">Workspace</div>
+
+    <div class="menuItem active"
+         onclick="showPage('dashboard',this)">
+        🏠 <span>Dashboard</span>
+    </div>
+
+    <div class="menuItem"
+         onclick="showPage('profile',this)">
+        👤 <span>My Profile</span>
+    </div>
+
+    <div class="menuItem"
+         onclick="showPage('jobs',this)">
+        💼 <span>Find Jobs</span>
+    </div>
+
+    <div class="menuItem"
+         onclick="showPage('applications',this)">
+        📋 <span>Applications</span>
+    </div>
+
+    <div class="menuItem"
+         onclick="showPage('saved',this)">
+        🔖 <span>Saved Jobs</span>
+    </div>
+
+    <div class="menuItem"
+         onclick="showPage('network',this)">
+        🤝 <span>My Network</span>
+    </div>
+
+    <div class="menuItem"
+         onclick="showPage('companies',this)">
+        🏢 <span>Companies</span>
+    </div>
+
+    <div class="menuItem"
+         onclick="showPage('messages',this)">
+        💬 <span>Messages</span>
+    </div>
+
+    <div class="menuLabel">Career Tools</div>
+
+    <div class="menuItem"
+         onclick="showPage('resume',this)">
+        📄 <span>Resume Builder</span>
+    </div>
+
+    <div class="menuItem"
+         onclick="showPage('roadmap',this)">
+        🗺️ <span>Career Roadmap</span>
+    </div>
+
+    <div class="menuItem"
+         onclick="openAI()">
+        🤖 <span>AI Career Guide</span>
+    </div>
+
+    <div class="menuLabel">Management</div>
+
+    <div class="menuItem"
+         onclick="showPage('recruiter',this)">
+        👔 <span>Recruiter Portal</span>
+    </div>
+
+    <div class="menuItem"
+         onclick="showPage('admin',this)">
+        📊 <span>Admin Panel</span>
+    </div>
+
+    <div class="menuItem"
+         onclick="logout()">
+        🚪 <span>Logout</span>
+    </div>
+
+</aside>
+
+
+<main class="main">
+
+
+<!-- =====================================================
+     DASHBOARD
+===================================================== -->
+
+<section id="dashboard" class="page active">
+
+    <div class="welcome">
+
+        <h1>Welcome back, Siddhi 👋</h1>
+
+        <p>
+            Your career journey continues today.
+            Explore opportunities, grow your network and
+            build your professional future.
+        </p>
+
+    </div>
+
+
+    <div class="quickGrid">
+
+        <div class="card quickStat">
+
+            <span>Profile Completion</span>
+
+            <h2>82%</h2>
+
+            <small class="green">↑ 12% this month</small>
+
+        </div>
+
+        <div class="card quickStat">
+
+            <span>Connections</span>
+
+            <h2>428</h2>
+
+            <small class="green">+18 this week</small>
+
+        </div>
+
+        <div class="card quickStat">
+
+            <span>Applications</span>
+
+            <h2>14</h2>
+
+            <small class="green">3 interviews</small>
+
+        </div>
+
+        <div class="card quickStat">
+
+            <span>Profile Views</span>
+
+            <h2>1,842</h2>
+
+            <small class="green">↑ 24%</small>
+
+        </div>
+
+    </div>
+
+
+    <div class="dashboardGrid">
+
+        <div>
+
+            <div class="card post">
+
+                <div class="profileRow">
+
+                    <div class="avatar">RS</div>
+
+                    <div>
+
+                        <div class="profileName">
+                            Rahul Sharma
+                        </div>
+
+                        <div class="profileRole">
+                            Software Engineer • Pune
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="postText">
+
+                    Excited to announce that I have joined
+                    TechNova as a Software Engineer! 🚀
+
+                    Looking forward to building meaningful
+                    products and learning from an amazing team.
+
+                </div>
+
+                <div class="postActions">
+
+                    <span onclick="likePost(this)">
+                        ❤️ Like <b>124</b>
+                    </span>
+
+                    <span>💬 Comment 18</span>
+
+                    <span>↗ Share</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="card post">
+
+                <div class="profileRow">
+
+                    <div class="avatar">AP</div>
+
+                    <div>
+
+                        <div class="profileName">
+                            Aditi Patil
+                        </div>
+
+                        <div class="profileRole">
+                            Marketing Intern
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="postText">
+
+                    Learning branding, customer psychology,
+                    digital marketing and content strategy.
+                    Small consistent steps create big results. 🌱
+
+                </div>
+
+                <div class="postActions">
+
+                    <span onclick="likePost(this)">
+                        ❤️ Like <b>87</b>
+                    </span>
+
+                    <span>💬 Comment 12</span>
+
+                    <span>↗ Share</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="card aiPanel">
+
+                <div class="aiHead">
+
+                    <div class="aiIcon">🤖</div>
+
+                    <div>
+                        <h3>AI Career Guide</h3>
+                        <small>Your career companion</small>
+                    </div>
+
+                </div>
+
+                <p class="muted" style="line-height:1.6">
+
+                    Get personalized guidance for careers,
+                    skills, resumes and interviews.
+
+                </p>
+
+                <div class="aiChoices">
+
+                    <button class="aiChoice"
+                            onclick="quickAI('Suggest career paths for a CSBS student')">
+                        🎯 Career Path
+                    </button>
+
+                    <button class="aiChoice"
+                            onclick="quickAI('Which skills should I learn next?')">
+                        🧠 Skill Gap
+                    </button>
+
+                    <button class="aiChoice"
+                            onclick="quickAI('Help me improve my resume')">
+                        📄 Resume
+                    </button>
+
+                    <button class="aiChoice"
+                            onclick="quickAI('Start a mock interview')">
+                        🎤 Interview
+                    </button>
+
+                </div>
+
+                <button class="btn btnPrimary"
+                        style="width:100%"
+                        onclick="openAI()">
+                    Open AI Career Guide
+                </button>
+
+            </div>
+
+
+            <br>
+
+
+            <div class="card cardPad">
+
+                <h3>🔥 Trending Skills</h3>
+
+                <div class="tags">
+
+                    <span class="tag">AI</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Data Analytics</span>
+                    <span class="tag">Cloud</span>
+                    <span class="tag">Cybersecurity</span>
+                    <span class="tag">Marketing</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROFILE
+===================================================== -->
+
+<section id="profile" class="page">
+
+    <div class="card">
+
+        <div class="cover"></div>
+
+        <div class="profileBody">
+
+            <div class="largeAvatar">SB</div>
+
+            <h1>Siddhi Bhintade</h1>
+
+            <p class="muted">
+                Computer Science & Business Systems Student
+                • AI • Business • Digital Marketing
+            </p>
+
+            <p class="muted">
+                📍 Pune, Maharashtra
+            </p>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <strong>428</strong>
+                    <span>Connections</span>
+                </div>
+
+                <div class="stat">
+                    <strong>14</strong>
+                    <span>Applications</span>
+                </div>
+
+                <div class="stat">
+                    <strong>1.8K</strong>
+                    <span>Profile Views</span>
+                </div>
+
+            </div>
+
+            <button class="btn btnPrimary"
+                    onclick="editProfile()">
+                Edit Profile
+            </button>
+
+            <button class="btn btnOutline">
+                Add Section
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <br>
+
+
+    <div class="dashboardGrid">
+
+        <div class="card cardPad">
+
+            <h2>About</h2>
+
+            <p class="muted"
+               style="line-height:1.8;margin-top:15px">
+
+                Passionate CSBS student interested in technology,
+                business, artificial intelligence, digital marketing
+                and entrepreneurship.
+
+                Currently building technical, communication,
+                leadership and professional skills.
+
+            </p>
+
+        </div>
+
+
+        <div class="card cardPad">
+
+            <h2>Skills</h2>
+
+            <div class="tags">
+
+                <span class="tag">Python</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">SQL</span>
+                <span class="tag">AI</span>
+                <span class="tag">Marketing</span>
+                <span class="tag">Communication</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     JOBS
+===================================================== -->
+
+<section id="jobs" class="page">
+
+    <div class="pageHeader">
+
+        <div>
+            <h1>Find Your Next Opportunity</h1>
+            <p>Discover jobs and internships.</p>
+        </div>
+
+        <button class="btn btnPrimary"
+                onclick="openJobModal()">
+            + Post Job
+        </button>
+
+    </div>
+
+
+    <div class="filterBar">
+
+        <input id="jobSearch"
+               placeholder="Search job title or company..."
+               oninput="filterJobs()">
+
+        <select id="jobType"
+                onchange="filterJobs()">
+
+            <option value="">All Types</option>
+            <option>Internship</option>
+            <option>Full Time</option>
+            <option>Part Time</option>
+
+        </select>
+
+        <select id="jobLocationFilter"
+                onchange="filterJobs()">
+
+            <option value="">All Locations</option>
+            <option>Pune</option>
+            <option>Mumbai</option>
+            <option>Remote</option>
+            <option>Bangalore</option>
+
+        </select>
+
+    </div>
+
+
+    <div class="jobGrid" id="jobList">
+
+        <div class="card jobCard"
+             data-title="Software Developer Intern"
+             data-company="TechNova"
+             data-type="Internship"
+             data-location="Pune">
+
+            <div class="jobTop">
+
+                <div class="companyLogo">T</div>
+
+                <div>
+
+                    <h3>Software Developer Intern</h3>
+
+                    <p class="jobCompany">
+                        TechNova Solutions • Pune
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="tags">
+
+                <span class="tag">Internship</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">React</span>
+                <span class="tag">Git</span>
+
+            </div>
+
+            <div class="jobBottom">
+
+                <span class="salary">
+                    ₹15K–₹25K/month
+                </span>
+
+                <button class="btn btnPrimary"
+                        onclick="applyJob(this,'Software Developer Intern')">
+                    Apply
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="card jobCard"
+             data-title="Digital Marketing Executive"
+             data-company="AdGrowth"
+             data-type="Full Time"
+             data-location="Remote">
+
+            <div class="jobTop">
+
+                <div class="companyLogo">A</div>
+
+                <div>
+
+                    <h3>Digital Marketing Executive</h3>
+
+                    <p class="jobCompany">
+                        AdGrowth India • Remote
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="tags">
+
+                <span class="tag">Full Time</span>
+                <span class="tag">SEO</span>
+                <span class="tag">Content</span>
+                <span class="tag">Social Media</span>
+
+            </div>
+
+            <div class="jobBottom">
+
+                <span class="salary">
+                    ₹4–₹6 LPA
+                </span>
+
+                <button class="btn btnPrimary"
+                        onclick="applyJob(this,'Digital Marketing Executive')">
+                    Apply
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="card jobCard"
+             data-title="Data Analyst"
+             data-company="DataSphere"
+             data-type="Full Time"
+             data-location="Bangalore">
+
+            <div class="jobTop">
+
+                <div class="companyLogo">D</div>
+
+                <div>
+
+                    <h3>Data Analyst</h3>
+
+                    <p class="jobCompany">
+                        DataSphere • Bangalore
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="tags">
+
+                <span class="tag">Full Time</span>
+                <span class="tag">Python</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Power BI</span>
+
+            </div>
+
+            <div class="jobBottom">
+
+                <span class="salary">
+                    ₹6–₹9 LPA
+                </span>
+
+                <button class="btn btnPrimary"
+                        onclick="applyJob(this,'Data Analyst')">
+                    Apply
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="card jobCard"
+             data-title="AI Research Intern"
+             data-company="FutureAI Labs"
+             data-type="Internship"
+             data-location="Remote">
+
+            <div class="jobTop">
+
+                <div class="companyLogo">F</div>
+
+                <div>
+
+                    <h3>AI Research Intern</h3>
+
+                    <p class="jobCompany">
+                        FutureAI Labs • Remote
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="tags">
+
+                <span class="tag">Internship</span>
+                <span class="tag">Python</span>
+                <span class="tag">Machine Learning</span>
+
+            </div>
+
+            <div class="jobBottom">
+
+                <span class="salary">
+                    ₹20K–₹30K/month
+                </span>
+
+                <button class="btn btnPrimary"
+                        onclick="applyJob(this,'AI Research Intern')">
+                    Apply
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     APPLICATIONS
+===================================================== -->
+
+<section id="applications" class="page">
+
+    <div class="pageHeader">
+
+        <div>
+            <h1>My Applications</h1>
+            <p>Track your job applications.</p>
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <div class="application">
+
+            <div>
+                <b>Software Developer Intern</b>
+                <p class="muted">TechNova Solutions</p>
+            </div>
+
+            <span class="status interview">
+                Interview
+            </span>
+
+        </div>
+
+        <div class="application">
+
+            <div>
+                <b>Data Analyst</b>
+                <p class="muted">DataSphere</p>
+            </div>
+
+            <span class="status applied">
+                Applied
+            </span>
+
+        </div>
+
+        <div class="application">
+
+            <div>
+                <b>Marketing Executive</b>
+                <p class="muted">AdGrowth India</p>
+            </div>
+
+            <span class="status selected">
+                Selected
+            </span>
+
+        </div>
+
+        <div class="application">
+
+            <div>
+                <b>Frontend Developer</b>
+                <p class="muted">WebWorks</p>
+            </div>
+
+            <span class="status rejected">
+                Not Selected
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SAVED
+===================================================== -->
+
+<section id="saved" class="page">
+
+    <div class="pageHeader">
+
+        <div>
+            <h1>Saved Jobs</h1>
+            <p>Opportunities you want to revisit.</p>
+        </div>
+
+    </div>
+
+    <div class="jobGrid">
+
+        <div class="card jobCard">
+
+            <div class="jobTop">
+
+                <div class="companyLogo">T</div>
+
+                <div>
+                    <h3>Frontend Developer</h3>
+                    <p class="jobCompany">
+                        TechWorks • Pune
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="tags">
+                <span class="tag">React</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Hybrid</span>
+            </div>
+
+            <button class="btn btnPrimary">
+                Apply Now
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NETWORK
+===================================================== -->
+
+<section id="network" class="page">
+
+    <div class="pageHeader">
+
+        <div>
+            <h1>My Network</h1>
+            <p>Grow your professional connections.</p>
+        </div>
+
+    </div>
+
+    <div class="peopleGrid">
+
+        <div class="card person">
+            <div class="avatar">AS</div>
+            <h3>Aditya Shah</h3>
+            <p>Software Engineer</p>
+            <button class="btn btnPrimary"
+                    onclick="connect(this)">
+                Connect
+            </button>
+        </div>
+
+        <div class="card person">
+            <div class="avatar">PK</div>
+            <h3>Priya Kulkarni</h3>
+            <p>Product Designer</p>
+            <button class="btn btnPrimary"
+                    onclick="connect(this)">
+                Connect
+            </button>
+        </div>
+
+        <div class="card person">
+            <div class="avatar">NK</div>
+            <h3>Neha Kapoor</h3>
+            <p>HR Manager</p>
+            <button class="btn btnPrimary"
+                    onclick="connect(this)">
+                Connect
+            </button>
+        </div>
+
+        <div class="card person">
+            <div class="avatar">RM</div>
+            <h3>Rohan Mehta</h3>
+            <p>Business Analyst</p>
+            <button class="btn btnPrimary"
+                    onclick="connect(this)">
+                Connect
+            </button>
+        </div>
+
+        <div class="card person">
+            <div class="avatar">VS</div>
+            <h3>Vikas Singh</h3>
+            <p>Data Scientist</p>
+            <button class="btn btnPrimary"
+                    onclick="connect(this)">
+                Connect
+            </button>
+        </div>
+
+        <div class="card person">
+            <div class="avatar">AM</div>
+            <h3>Ananya More</h3>
+            <p>Marketing Specialist</p>
+            <button class="btn btnPrimary"
+                    onclick="connect(this)">
+                Connect
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     COMPANIES
+===================================================== -->
+
+<section id="companies" class="page">
+
+    <div class="pageHeader">
+
+        <div>
+            <h1>Companies</h1>
+            <p>Explore companies and their opportunities.</p>
+        </div>
+
+        <button class="btn btnPrimary">
+            + Create Company
+        </button>
+
+    </div>
+
+    <div class="peopleGrid">
+
+        <div class="card person">
+            <div class="companyLogo" style="margin:auto">T</div>
+            <h3>TechNova</h3>
+            <p>Software • AI • Cloud</p>
+            <button class="btn btnOutline">View Company</button>
+        </div>
+
+        <div class="card person">
+            <div class="companyLogo" style="margin:auto">A</div>
+            <h3>AdGrowth</h3>
+            <p>Marketing • Media</p>
+            <button class="btn btnOutline">View Company</button>
+        </div>
+
+        <div class="card person">
+            <div class="companyLogo" style="margin:auto">D</div>
+            <h3>DataSphere</h3>
+            <p>Analytics • Data</p>
+            <button class="btn btnOutline">View Company</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MESSAGES
+===================================================== -->
+
+<section id="messages" class="page">
+
+    <div class="pageHeader">
+
+        <div>
+            <h1>Messages</h1>
+            <p>Professional conversations.</p>
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <div class="application">
+
+            <div class="profileRow">
+
+                <div class="avatar">NK</div>
+
+                <div>
+                    <b>Neha Kapoor</b>
+                    <p class="muted">
+                        We have an internship opportunity...
+                    </p>
+                </div>
+
+            </div>
+
+            <span class="status applied">New</span>
+
+        </div>
+
+        <div class="application">
+
+            <div class="profileRow">
+
+                <div class="avatar">RS</div>
+
+                <div>
+                    <b>Rahul Sharma</b>
+                    <p class="muted">
+                        Are you attending the networking event?
+                    </p>
+                </div>
+
+            </div>
+
+            <span class="muted">Yesterday</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     RESUME
+===================================================== -->
+
+<section id="resume" class="page">
+
+    <div class="pageHeader">
+
+        <div>
+            <h1>Resume Builder</h1>
+            <p>Create and improve your professional resume.</p>
+        </div>
+
+        <button class="btn btnPrimary"
+                onclick="generateResume()">
+            Generate Preview
+        </button>
+
+    </div>
+
+    <div class="dashboardGrid">
+
+        <div class="card cardPad">
+
+            <h2>Personal Information</h2>
+
+            <br>
+
+            <div class="formGroup">
+                <label>Name</label>
+                <input id="resumeName" value="Siddhi Bhintade">
+            </div>
+
+            <div class="formGroup">
+                <label>Professional Title</label>
+                <input id="resumeTitle"
+                       value="CSBS Student | AI & Business">
+            </div>
+
+            <div class="formGroup">
+                <label>Email</label>
+                <input id="resumeEmail"
+                       placeholder="your@email.com">
+            </div>
+
+            <div class="formGroup">
+                <label>Summary</label>
+                <textarea id="resumeSummary" rows="5"
+                placeholder="Write your professional summary..."></textarea>
+            </div>
+
+        </div>
+
+
+        <div class="card cardPad">
+
+            <h2>Skills</h2>
+
+            <div class="tags">
+
+                <span class="tag">Python</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">SQL</span>
+                <span class="tag">AI</span>
+                <span class="tag">Marketing</span>
+
+            </div>
+
+            <br>
+
+            <h2>Experience</h2>
+
+            <p class="muted" style="margin-top:12px">
+                Digital Marketing Internship
+            </p>
+
+            <br>
+
+            <h2>Projects</h2>
+
+            <p class="muted" style="margin-top:12px">
+                My Career – Career Networking Platform
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ROADMAP
+===================================================== -->
+
+<section id="roadmap" class="page">
+
+    <div class="pageHeader">
+
+        <div>
+            <h1>Career Roadmap</h1>
+            <p>Your personalized career development journey.</p>
+        </div>
+
+        <button class="btn btnPrimary"
+                onclick="openAI()">
+            Generate with AI
+        </button>
+
+    </div>
+
+    <div class="card cardPad">
+
+        <div class="roadmap">
+
+            <div class="step">
+
+                <div class="stepDot"></div>
+
+                <h3>1. Build Fundamentals</h3>
+
+                <p>
+                    Strengthen programming, SQL, data structures,
+                    communication and business fundamentals.
+                </p>
+
+            </div>
+
+            <div class="step">
+
+                <div class="stepDot"></div>
+
+                <h3>2. Choose Your Direction</h3>
+
+                <p>
+                    Explore software development, AI/data,
+                    product/business or marketing paths.
+                </p>
+
+            </div>
+
+            <div class="step">
+
+                <div class="stepDot"></div>
+
+                <h3>3. Build Projects</h3>
+
+                <p>
+                    Create practical projects that demonstrate
+                    your skills to recruiters.
+                </p>
+
+            </div>
+
+            <div class="step">
+
+                <div class="stepDot"></div>
+
+                <h3>4. Build Your Professional Brand</h3>
+
+                <p>
+                    Improve your resume, profile, portfolio,
+                    communication and networking.
+                </p>
+
+            </div>
+
+            <div class="step">
+
+                <div class="stepDot"></div>
+
+                <h3>5. Apply & Interview</h3>
+
+                <p>
+                    Apply strategically and practice technical
+                    and behavioral interviews.
+                </p>
+
+            </div>
+
+            <div class="step">
+
+                <div class="stepDot"></div>
+
+                <h3>6. Grow Professionally</h3>
+
+                <p>
+                    Continue learning, networking and developing
+                    leadership and industry skills.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     RECRUITER
+===================================================== -->
+
+<section id="recruiter" class="page">
+
+    <div class="pageHeader">
+
+        <div>
+            <h1>Recruiter Portal</h1>
+            <p>Manage jobs, candidates and applications.</p>
+        </div>
+
+        <button class="btn btnPrimary"
+                onclick="openJobModal()">
+            + Post New Job
+        </button>
+
+    </div>
+
+    <div class="recruiterStats">
+
+        <div class="card quickStat">
+            <span>Active Jobs</span>
+            <h2>12</h2>
+            <small class="green">+3 this month</small>
+        </div>
+
+        <div class="card quickStat">
+            <span>Applicants</span>
+            <h2>842</h2>
+            <small class="green">+18%</small>
+        </div>
+
+        <div class="card quickStat">
+            <span>Interviews</span>
+            <h2>76</h2>
+            <small class="green">+9%</small>
+        </div>
+
+        <div class="card quickStat">
+            <span>Hires</span>
+            <h2>18</h2>
+            <small class="green">+4</small>
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class="card cardPad">
+
+        <h2>Application Analytics</h2>
+
+        <div class="chart">
+
+            <div class="bar" style="height:35%"></div>
+            <div class="bar" style="height:55%"></div>
+            <div class="bar" style="height:45%"></div>
+            <div class="bar" style="height:72%"></div>
+            <div class="bar" style="height:62%"></div>
+            <div class="bar" style="height:88%"></div>
+            <div class="bar" style="height:76%"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ADMIN
+===================================================== -->
+
+<section id="admin" class="page">
+
+    <div class="pageHeader">
+
+        <div>
+            <h1>Admin Control Center</h1>
+            <p>Manage the My Career ecosystem.</p>
+        </div>
+
+        <button class="btn btnPrimary">
+            ⚙ Settings
+        </button>
+
+    </div>
+
+    <div class="adminGrid">
+
+        <div class="card adminStat">
+            <small>Total Users</small>
+            <h2>12,540</h2>
+            <span class="green">↑ 12.5%</span>
+        </div>
+
+        <div class="card adminStat">
+            <small>Companies</small>
+            <h2>428</h2>
+            <span class="green">↑ 8.2%</span>
+        </div>
+
+        <div class="card adminStat">
+            <small>Active Jobs</small>
+            <h2>1,284</h2>
+            <span class="green">↑ 15.4%</span>
+        </div>
+
+        <div class="card adminStat">
+            <small>Applications</small>
+            <h2>8,642</h2>
+            <span class="green">↑ 19.1%</span>
+        </div>
+
+    </div>
+
+
+    <div class="card cardPad">
+
+        <h2>User Management</h2>
+
+        <br>
+
+        <div class="tableWrap">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>User</th>
+                        <th>Role</th>
+                        <th>Joined</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Siddhi Bhintade</td>
+                        <td>Student</td>
+                        <td>2026</td>
+                        <td>
+                            <span class="status selected">
+                                Active
+                            </span>
+                        </td>
+                        <td>
+                            <button class="btn btnOutline">
+                                View
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Rahul Sharma</td>
+                        <td>Professional</td>
+                        <td>2026</td>
+                        <td>
+                            <span class="status selected">
+                                Active
+                            </span>
+                        </td>
+                        <td>
+                            <button class="btn btnOutline">
+                                View
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>TechNova Solutions</td>
+                        <td>Company</td>
+                        <td>2026</td>
+                        <td>
+                            <span class="status selected">
+                                Verified
+                            </span>
+                        </td>
+                        <td>
+                            <button class="btn btnOutline">
+                                View
+                            </button>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NOTIFICATIONS
+===================================================== -->
+
+<section id="notifications" class="page">
+
+    <div class="pageHeader">
+
+        <div>
+            <h1>Notifications</h1>
+            <p>Your latest updates.</p>
+        </div>
+
+    </div>
+
+    <div class="card cardPad">
+
+        <p>🔵 <b>Neha Kapoor</b> sent you a connection request.</p>
+
+        <hr style="margin:16px 0;border:0;border-top:1px solid var(--border)">
+
+        <p>💼 New job posted: AI Research Intern.</p>
+
+        <hr style="margin:16px 0;border:0;border-top:1px solid var(--border)">
+
+        <p>❤️ Rahul Sharma liked your post.</p>
+
+        <hr style="margin:16px 0;border:0;border-top:1px solid var(--border)">
+
+        <p>🎤 Your interview is scheduled for tomorrow.</p>
+
+    </div>
+
+</section>
+
+
+</main>
+</div>
+</div>
+
+
+<!-- =========================================================
+     AI BUTTON
+========================================================= -->
+
+<button class="aiFloating"
+        onclick="toggleAI()">
+    🤖
+</button>
+
+
+<!-- =========================================================
+     AI CHAT
+========================================================= -->
+
+<div class="aiChat" id="aiChat">
+
+    <div class="aiChatHead">
+
+        <div>
+            <b>🤖 AI Career Guide</b>
+            <br>
+            <small>My Career Assistant</small>
+        </div>
+
+        <button onclick="toggleAI()"
+                style="background:none;border:0;color:white;font-size:20px">
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="chatMessages" id="chatMessages">
+
+        <div class="message bot">
+
+            👋 Hi Siddhi!
+
+            I'm your AI Career Guide.
+
+            <br><br>
+
+            I can help you with:
+
+            <br>• Career planning
+            <br>• Skills
+            <br>• Resume
+            <br>• Interviews
+            <br>• Projects
+            <br>• Job preparation
+
+        </div>
+
+    </div>
+
+
+    <div class="chatInput">
+
+        <input id="aiInput"
+               placeholder="Ask your career question..."
+               onkeydown="if(event.key==='Enter')sendAI()">
+
+        <button class="btn btnPrimary"
+                onclick="sendAI()">
+            ➤
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     AUTH MODAL
+========================================================= -->
+
+<div class="authOverlay" id="authOverlay">
+
+    <div class="authBox">
+
+        <div class="authHeader">
+
+            <div class="brand"
+                 style="justify-content:center">
+                <div class="brandMark">MC</div>
+                MY CAREER
+            </div>
+
+            <br>
+
+            <h2 id="authTitle">Welcome Back</h2>
+
+            <p id="authSubtitle">
+                Login to continue your career journey.
+            </p>
+
+        </div>
+
+
+        <div id="registerFields">
+
+            <div class="formGroup">
+
+                <label>Full Name</label>
+
+                <input id="authName"
+                       placeholder="Enter your name">
+
+            </div>
+
+
+            <div class="formGroup">
+
+                <label>I am a</label>
+
+                <select id="authRole">
+
+                    <option>Student</option>
+                    <option>Professional</option>
+                    <option>Recruiter</option>
+                    <option>Business</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="formGroup">
+
+            <label>Email</label>
+
+            <input id="authEmail"
+                   type="email"
+                   placeholder="you@example.com">
+
+        </div>
+
+
+        <div class="formGroup">
+
+            <label>Password</label>
+
+            <input id="authPassword"
+                   type="password"
+                   placeholder="••••••••">
+
+        </div>
+
+
+        <button class="btn btnPrimary"
+                style="width:100%"
+                onclick="submitAuth()"
+                id="authSubmit">
+            Login
+        </button>
+
+
+        <div class="authSwitch"
+             id="authSwitch">
+
+            Don't have an account?
+            <span onclick="switchAuth()">Create one</span>
+
+        </div>
+
+
+        <button class="btn btnOutline"
+                style="width:100%;margin-top:12px"
+                onclick="closeAuth()">
+            Cancel
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     JOB MODAL
+========================================================= -->
+
+<div class="modal" id="jobModal">
+
+    <div class="modalBox">
+
+        <h2>Post a New Job</h2>
+
+        <p class="muted" style="margin:6px 0 20px">
+            Create an opportunity for the My Career community.
+        </p>
+
+        <div class="formGroup">
+
+            <label>Job Title</label>
+
+            <input id="newJobTitle"
+                   placeholder="Software Developer">
+
+        </div>
+
+        <div class="formGroup">
+
+            <label>Company</label>
+
+            <input id="newJobCompany"
+                   placeholder="Company name">
+
+        </div>
+
+        <div class="formGroup">
+
+            <label>Location</label>
+
+            <input id="newJobLocation"
+                   placeholder="Pune / Remote">
+
+        </div>
+
+        <div class="formGroup">
+
+            <label>Job Type</label>
+
+            <select id="newJobType">
+
+                <option>Internship</option>
+                <option>Full Time</option>
+                <option>Part Time</option>
+
+            </select>
+
+        </div>
+
+        <div class="formGroup">
+
+            <label>Salary</label>
+
+            <input id="newJobSalary"
+                   placeholder="₹5–₹8 LPA">
+
+        </div>
+
+        <div style="display:flex;gap:10px;justify-content:flex-end">
+
+            <button class="btn btnOutline"
+                    onclick="closeJobModal()">
+                Cancel
+            </button>
+
+            <button class="btn btnPrimary"
+                    onclick="createJob()">
+                Publish Job
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+/* =========================================================
+   MY CAREER JAVASCRIPT
+========================================================= */
+
+let authMode="login";
+
+
+/* =========================================================
+   AUTHENTICATION DEMO
+========================================================= */
+
+function openAuth(mode){
+
+    authMode=mode;
+
+    document
+        .getElementById("authOverlay")
+        .classList.add("open");
+
+    updateAuth();
+
+}
+
+
+function closeAuth(){
+
+    document
+        .getElementById("authOverlay")
+        .classList.remove("open");
+
+}
+
+
+function switchAuth(){
+
+    authMode =
+        authMode==="login"
+        ? "register"
+        : "login";
+
+    updateAuth();
+
+}
+
+
+function updateAuth(){
+
+    const register =
+        document.getElementById("registerFields");
+
+    const title =
+        document.getElementById("authTitle");
+
+    const subtitle =
+        document.getElementById("authSubtitle");
+
+    const submit =
+        document.getElementById("authSubmit");
+
+    const switchText =
+        document.getElementById("authSwitch");
+
+
+    if(authMode==="register"){
+
+        register.classList.remove("hidden");
+
+        title.innerText="Create Your Account";
+
+        subtitle.innerText=
+            "Start building your professional future.";
+
+        submit.innerText="Create Account";
+
+        switchText.innerHTML=
+            `Already have an account?
+             <span onclick="switchAuth()">Login</span>`;
+
+    }else{
+
+        register.classList.add("hidden");
+
+        title.innerText="Welcome Back";
+
+        subtitle.innerText=
+            "Login to continue your career journey.";
+
+        submit.innerText="Login";
+
+        switchText.innerHTML=
+            `Don't have an account?
+             <span onclick="switchAuth()">Create one</span>`;
+
+    }
+
+}
+
+
+function submitAuth(){
+
+    const email =
+        document.getElementById("authEmail").value.trim();
+
+    const password =
+        document.getElementById("authPassword").value.trim();
+
+    if(!email || !password){
+
+        showToast("Please enter email and password.");
+
+        return;
+
+    }
+
+
+    localStorage.setItem("mycareerLoggedIn","true");
+
+    closeAuth();
+
+    document.getElementById("landing").style.display="none";
+
+    document.getElementById("app").style.display="block";
+
+    showToast(
+        authMode==="register"
+        ? "Welcome to My Career! 🎉"
+        : "Welcome back! 👋"
+    );
+
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+function logout(){
+
+    localStorage.removeItem("mycareerLoggedIn");
+
+    document.getElementById("app").style.display="none";
+
+    document.getElementById("landing").style.display="block";
+
+    showToast("You have been logged out.");
+
+}
+
+
+/* =========================================================
+   PAGE NAVIGATION
+========================================================= */
+
+function showPage(pageId,element){
+
+    document
+        .querySelectorAll(".page")
+        .forEach(page =>
+            page.classList.remove("active")
+        );
+
+
+    const target =
+        document.getElementById(pageId);
+
+    if(target){
+        target.classList.add("active");
+    }
+
+
+    document
+        .querySelectorAll(".menuItem")
+        .forEach(item =>
+            item.classList.remove("active")
+        );
+
+
+    if(element &&
+       element.classList.contains("menuItem")){
+
+        element.classList.add("active");
+
+    }
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+function toggleDark(){
+
+    document.body.classList.toggle("dark");
+
+    localStorage.setItem(
+        "mycareerDark",
+        document.body.classList.contains("dark")
+    );
+
+}
+
+
+if(localStorage.getItem("mycareerDark")==="true"){
+
+    document.body.classList.add("dark");
+
+}
+
+
+/* =========================================================
+   LANDING SCROLL
+========================================================= */
+
+function scrollToSection(id){
+
+    document
+        .getElementById(id)
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* =========================================================
+   AI CAREER GUIDE
+========================================================= */
+
+function toggleAI(){
+
+    document
+        .getElementById("aiChat")
+        .classList.toggle("open");
+
+}
+
+
+function openAI(){
+
+    document
+        .getElementById("aiChat")
+        .classList.add("open");
+
+}
+
+
+function quickAI(question){
+
+    openAI();
+
+    document
+        .getElementById("aiInput")
+        .value=question;
+
+    sendAI();
+
+}
+
+
+function addMessage(text,type){
+
+    const container =
+        document.getElementById("chatMessages");
+
+    const message =
+        document.createElement("div");
+
+    message.className=
+        "message "+type;
+
+    message.innerText=text;
+
+    container.appendChild(message);
+
+    container.scrollTop=
+        container.scrollHeight;
+
+}
+
+
+function sendAI(){
+
+    const input =
+        document.getElementById("aiInput");
+
+    const question =
+        input.value.trim();
+
+    if(!question) return;
+
+
+    addMessage(question,"user");
+
+    input.value="";
+
+
+    setTimeout(()=>{
+
+        const q =
+            question.toLowerCase();
+
+        let response="";
+
+
+        if(
+            q.includes("resume") ||
+            q.includes("cv")
+        ){
+
+            response=
+            "For your resume, focus on a clear headline, education, technical skills, projects, internships, achievements and measurable results. Keep the strongest and most relevant information near the top.";
+
+        }
+
+        else if(
+            q.includes("interview") ||
+            q.includes("interview")
+        ){
+
+            response=
+            "For interview preparation, practice your introduction, projects, technical fundamentals, internship experience, behavioral questions and questions for the interviewer. I can also conduct a mock interview with you.";
+
+        }
+
+        else if(
+            q.includes("skill") ||
+            q.includes("learn")
+        ){
+
+            response=
+            "A strong career skill stack combines technical ability, communication and business understanding. For a CSBS student, consider programming, SQL, DSA, AI/data fundamentals, Git, communication and project building.";
+
+        }
+
+        else if(
+            q.includes("career") ||
+            q.includes("job")
+        ){
+
+            response=
+            "Start by identifying 2–3 possible career directions. Compare the skills required, build a small project in each area and use your experience to decide which direction fits your interests.";
+
+        }
+
+        else if(
+            q.includes("project")
+        ){
+
+            response=
+            "Choose projects that solve real problems. A strong project should have a clear problem statement, users, features, technology stack, implementation and measurable outcome. My Career itself can become a strong portfolio project.";
+
+        }
+
+        else{
+
+            response=
+            "I can help with career planning, job preparation, resume improvement, interview practice, skill development, project ideas and professional branding. Ask me something specific.";
+
+        }
+
+
+        addMessage(response,"bot");
+
+    },700);
+
+}
+
+
+/* =========================================================
+   JOB FILTER
+========================================================= */
+
+function filterJobs(){
+
+    const search =
+        document
+        .getElementById("jobSearch")
+        .value
+        .toLowerCase();
+
+    const type =
+        document
+        .getElementById("jobType")
+        .value;
+
+    const location =
+        document
+        .getElementById("jobLocationFilter")
+        .value;
+
+
+    document
+        .querySelectorAll(".jobCard")
+        .forEach(card=>{
+
+            const title =
+                card.dataset.title
+                ?.toLowerCase() || "";
+
+            const company =
+                card.dataset.company
+                ?.toLowerCase() || "";
+
+            const cardType =
+                card.dataset.type || "";
+
+            const cardLocation =
+                card.dataset.location || "";
+
+
+            const matchesSearch =
+                title.includes(search) ||
+                company.includes(search);
+
+            const matchesType =
+                !type || cardType===type;
+
+            const matchesLocation =
+                !location ||
+                cardLocation===location;
+
+
+            card.style.display =
+                matchesSearch &&
+                matchesType &&
+                matchesLocation
+                ? ""
+                : "none";
+
+        });
+
+}
+
+
+/* =========================================================
+   APP SEARCH
+========================================================= */
+
+function searchApp(){
+
+    const query =
+        document
+        .getElementById("appSearch")
+        .value
+        .toLowerCase();
+
+    if(!query) return;
+
+    showPage("jobs");
+
+    document
+        .getElementById("jobSearch")
+        .value=query;
+
+    filterJobs();
+
+}
+
+
+/* =========================================================
+   JOB APPLICATION
+========================================================= */
+
+function applyJob(button,title){
+
+    button.innerText="Applied ✓";
+
+    button.disabled=true;
+
+    button.style.background="var(--success)";
+
+
+    let applications =
+        JSON.parse(
+            localStorage.getItem("applications") || "[]"
+        );
+
+    applications.push({
+        title:title,
+        date:new Date().toLocaleDateString()
+    });
+
+    localStorage.setItem(
+        "applications",
+        JSON.stringify(applications)
+    );
+
+
+    showToast(
+        "Application submitted successfully! 🚀"
+    );
+
+}
+
+
+/* =========================================================
+   SAVE JOB
+========================================================= */
+
+function saveJob(){
+
+    showToast("Job saved to your list 🔖");
+
+}
+
+
+/* =========================================================
+   CONNECT
+========================================================= */
+
+function connect(button){
+
+    button.innerText="Connected ✓";
+
+    button.disabled=true;
+
+    button.style.background="var(--success)";
+
+    showToast("Connection added 🤝");
+
+}
+
+
+/* =========================================================
+   LIKE
+========================================================= */
+
+function likePost(element){
+
+    const number =
+        element.querySelector("b");
+
+    let count =
+        parseInt(number.innerText);
+
+    if(element.dataset.liked){
+
+        return;
+
+    }
+
+    count++;
+
+    number.innerText=count;
+
+    element.dataset.liked="true";
+
+    element.style.color="var(--primary)";
+
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+function editProfile(){
+
+    showToast(
+        "Profile editor is ready for backend integration."
+    );
+
+}
+
+
+/* =========================================================
+   JOB MODAL
+========================================================= */
+
+function openJobModal(){
+
+    document
+        .getElementById("jobModal")
+        .classList.add("open");
+
+}
+
+
+function closeJobModal(){
+
+    document
+        .getElementById("jobModal")
+        .classList.remove("open");
+
+}
+
+
+function createJob(){
+
+    const title =
+        document
+        .getElementById("newJobTitle")
+        .value.trim();
+
+    const company =
+        document
+        .getElementById("newJobCompany")
+        .value.trim();
+
+    const location =
+        document
+        .getElementById("newJobLocation")
+        .value.trim();
+
+    const type =
+        document
+        .getElementById("newJobType")
+        .value;
+
+    const salary =
+        document
+        .getElementById("newJobSalary")
+        .value.trim();
+
+
+    if(!title || !company || !location){
+
+        showToast(
+            "Please complete the required fields."
+        );
+
+        return;
+
+    }
+
+
+    const card =
+        document.createElement("div");
+
+    card.className="card jobCard";
+
+    card.dataset.title=title;
+
+    card.dataset.company=company;
+
+    card.dataset.type=type;
+
+    card.dataset.location=location;
+
+
+    card.innerHTML=`
+
+        <div class="jobTop">
+
+            <div class="companyLogo">
+                ${company.charAt(0).toUpperCase()}
+            </div>
+
+            <div>
+
+                <h3>${title}</h3>
+
+                <p class="jobCompany">
+                    ${company} • ${location}
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="tags">
+
+            <span class="tag">${type}</span>
+            <span class="tag">${location}</span>
+            <span class="tag">New</span>
+
+        </div>
+
+        <div class="jobBottom">
+
+            <span class="salary">
+                ${salary || "Salary not disclosed"}
+            </span>
+
+            <button class="btn btnPrimary"
+                    onclick="applyJob(this,'${title}')">
+                Apply
+            </button>
+
+        </div>
+    `;
+
+
+    document
+        .getElementById("jobList")
+        .prepend(card);
+
+
+    closeJobModal();
+
+    showToast(
+        "Job published successfully! 💼"
+    );
+
+
+    document
+        .getElementById("newJobTitle")
+        .value="";
+
+    document
+        .getElementById("newJobCompany")
+        .value="";
+
+    document
+        .getElementById("newJobLocation")
+        .value="";
+
+    document
+        .getElementById("newJobSalary")
+        .value="";
+
+}
+
+
+/* =========================================================
+   RESUME
+========================================================= */
+
+function generateResume(){
+
+    const name =
+        document
+        .getElementById("resumeName")
+        .value;
+
+    const title =
+        document
+        .getElementById("resumeTitle")
+        .value;
+
+
+    alert(
+        "Resume Preview\n\n"+
+        name+"\n"+
+        title+
+        "\n\nYour resume preview can be connected to a PDF generator in the backend version."
+    );
+
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.innerText=message;
+
+    toast.classList.add("show");
+
+
+    setTimeout(()=>{
+
+        toast.classList.remove("show");
+
+    },2800);
+
+}
+
+
+/* =========================================================
+   AUTO LOGIN DEMO
+========================================================= */
+
+if(
+    localStorage.getItem("mycareerLoggedIn")==="true"
+){
+
+    document.getElementById("landing").style.display="none";
+
+    document.getElementById("app").style.display="block";
+
+}
+
+</script>
+
+</body>
+</html>
